@@ -1,0 +1,24 @@
+{
+  "name": "@audio/sinusoidal",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "description": "Sinusoidal modeling — umbrella for @audio/sinusoidal-* atoms (partial tracking, additive resynthesis, residual)",
+  "workspaces": [
+    "packages/*"
+  ],
+  "keywords": [
+    "audio",
+    "dsp",
+    "sinusoidal",
+    "sms",
+    "mcaulay-quatieri",
+    "additive-synthesis"
+  ],
+  "license": "MIT",
+  "author": "Dmitry Iv. <dfcreative@gmail.com>",
+  "engines": {
+    "node": ">=18"
+  }
+}
