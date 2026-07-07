@@ -1,10 +1,20 @@
 {
   "name": "@audio/sinusoidal-track",
-  "version": "0.0.0",
-  "description": "Sinusoidal analysis — STFT peak picking + partial tracking (McAulay-Quatieri 1986)",
+  "version": "1.0.0",
+  "description": "Sinusoidal analysis — STFT peaks (parabolic) + nearest-frequency partial tracking (McAulay-Quatieri 1986)",
   "type": "module",
   "sideEffects": false,
-  "private": true,
+  "main": "track.js",
+  "exports": {
+    ".": "./track.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "track.js"
+  ],
+  "dependencies": {
+    "fourier-transform": "^2.2.0"
+  },
   "keywords": [
     "audio",
     "dsp",
@@ -16,5 +26,8 @@
   "author": "Dmitry Iv. <dfcreative@gmail.com>",
   "engines": {
     "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

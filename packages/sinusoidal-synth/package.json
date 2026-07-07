@@ -1,10 +1,17 @@
 {
   "name": "@audio/sinusoidal-synth",
-  "version": "0.0.0",
-  "description": "Additive resynthesis from partial trajectories (frequency/amplitude/phase smoothing)",
+  "version": "1.0.0",
+  "description": "Additive resynthesis from partial trajectories — interpolated freq/amp, integrated phase",
   "type": "module",
   "sideEffects": false,
-  "private": true,
+  "main": "synth.js",
+  "exports": {
+    ".": "./synth.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "synth.js"
+  ],
   "keywords": [
     "audio",
     "dsp",
@@ -16,5 +23,8 @@
   "author": "Dmitry Iv. <dfcreative@gmail.com>",
   "engines": {
     "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
