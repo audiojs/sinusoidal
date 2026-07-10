@@ -1,6 +1,6 @@
 {
   "name": "@audio/sinusoidal-track",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sinusoidal analysis — STFT peaks (parabolic) + nearest-frequency partial tracking (McAulay-Quatieri 1986)",
   "type": "module",
   "sideEffects": false,

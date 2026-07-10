@@ -1,6 +1,6 @@
 {
   "name": "@audio/sinusoidal-residual",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Residual noise layer — spectral subtraction of tracked partials with input phase (Serra SMS)",
   "type": "module",
   "sideEffects": false,
