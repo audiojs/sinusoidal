@@ -5,7 +5,7 @@
 // soft mask), then resynthesize with the input phase — robust without original-phase tracking.
 
 import { fft, ifft } from 'fourier-transform'
-import track from '@audio/sinusoidal-track'
+import track, { hann } from '@audio/sinusoidal-track'
 
 /**
  * @param {Float32Array} data — mono PCM
@@ -26,9 +26,7 @@ export default function residual (data, opts = {}) {
 		}
 	}
 
-	let win = new Float64Array(frameSize)
-	let winSum = 0
-	for (let i = 0; i < frameSize; i++) { win[i] = 0.5 - 0.5 * Math.cos(2 * Math.PI * i / frameSize); winSum += win[i] }
+	let { win, winSum } = hann(frameSize)
 	let buf = new Float64Array(frameSize)
 	let out = new Float64Array(data.length)
 	let norm = new Float64Array(data.length)

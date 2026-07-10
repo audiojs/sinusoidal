@@ -3,6 +3,20 @@
 // resynthesis (@audio/sinusoidal-synth) and residual extraction (@audio/sinusoidal-residual).
 
 import { fft } from 'fourier-transform'
+import window from '@audio/window'
+
+// Cached per frameSize — hann window + its sum (used to normalize peak amplitudes).
+let _hannCache = new Map()
+export function hann (N) {
+	let w = _hannCache.get(N)
+	if (w) return w
+	let win = window('hann', N, { periodic: true })
+	let winSum = 0
+	for (let i = 0; i < N; i++) winSum += win[i]
+	w = { win, winSum }
+	_hannCache.set(N, w)
+	return w
+}
 
 /**
  * @param {Float32Array} data — mono PCM
@@ -13,9 +27,7 @@ import { fft } from 'fourier-transform'
  */
 export default function track (data, { fs = 44100, frameSize = 2048, hop = 512, maxPartials = 40, threshold = -60, maxJump = 60 } = {}) {
 	let half = frameSize / 2
-	let win = new Float64Array(frameSize)
-	let winSum = 0
-	for (let i = 0; i < frameSize; i++) { win[i] = 0.5 - 0.5 * Math.cos(2 * Math.PI * i / frameSize); winSum += win[i] }
+	let { win, winSum } = hann(frameSize)
 	let buf = new Float64Array(frameSize)
 	let nFrames = Math.max(0, Math.floor((data.length - frameSize) / hop) + 1)
 
