@@ -1,6 +1,6 @@
 {
   "name": "@audio/sinusoidal-residual",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Residual noise layer — spectral subtraction of tracked partials with input phase (Serra SMS)",
   "type": "module",
   "sideEffects": false,
@@ -10,8 +10,10 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "residual.js"
+    "residual.js",
+    "residual.d.ts"
   ],
+  "types": "residual.d.ts",
   "dependencies": {
     "fourier-transform": "^2.2.0",
     "@audio/sinusoidal-track": "^1.0.0"
@@ -35,5 +37,6 @@
     "type": "git",
     "url": "git+https://github.com/audiojs/sinusoidal.git",
     "directory": "packages/sinusoidal-residual"
-  }
+  },
+  "funding": "https://github.com/sponsors/audiojs"
 }

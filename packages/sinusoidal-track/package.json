@@ -1,6 +1,6 @@
 {
   "name": "@audio/sinusoidal-track",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Sinusoidal analysis — STFT peaks (parabolic) + nearest-frequency partial tracking (McAulay-Quatieri 1986)",
   "type": "module",
   "sideEffects": false,
@@ -10,8 +10,10 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "track.js"
+    "track.js",
+    "track.d.ts"
   ],
+  "types": "track.d.ts",
   "dependencies": {
     "fourier-transform": "^2.2.0",
     "@audio/window": "^1.0.2"
@@ -35,5 +37,6 @@
     "type": "git",
     "url": "git+https://github.com/audiojs/sinusoidal.git",
     "directory": "packages/sinusoidal-track"
-  }
+  },
+  "funding": "https://github.com/sponsors/audiojs"
 }

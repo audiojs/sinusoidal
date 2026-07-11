@@ -1,6 +1,6 @@
 {
   "name": "@audio/sinusoidal-synth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Additive resynthesis from partial trajectories — interpolated freq/amp, integrated phase",
   "type": "module",
   "sideEffects": false,
@@ -10,8 +10,10 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "synth.js"
+    "synth.js",
+    "synth.d.ts"
   ],
+  "types": "synth.d.ts",
   "keywords": [
     "audio",
     "dsp",
@@ -31,5 +33,6 @@
     "type": "git",
     "url": "git+https://github.com/audiojs/sinusoidal.git",
     "directory": "packages/sinusoidal-synth"
-  }
+  },
+  "funding": "https://github.com/sponsors/audiojs"
 }

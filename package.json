@@ -1,6 +1,6 @@
 {
   "name": "@audio/sinusoidal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "sideEffects": false,
   "description": "Sinusoidal modeling — umbrella for @audio/sinusoidal-* atoms (partial tracking, additive resynthesis, residual)",
@@ -47,5 +47,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/audiojs/sinusoidal.git"
-  }
+  },
+  "funding": "https://github.com/sponsors/audiojs"
 }
