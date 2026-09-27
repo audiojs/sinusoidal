@@ -34,6 +34,7 @@ export default function synth (model, { length } = {}) {
 				a = p.amps[idx] + (p.amps[idx + 1] - p.amps[idx]) * frac
 			}
 			phase += 2 * Math.PI * f / fs
+			if (phase >= 2 * Math.PI) phase -= 2 * Math.PI  // unwrapped, a long partial reaches ~1e7 rad: sin goes slow and imprecise
 			out[i] += a * Math.sin(phase)
 		}
 	}
